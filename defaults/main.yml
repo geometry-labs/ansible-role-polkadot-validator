@@ -1,0 +1,11 @@
+---
+## Client
+project: default
+count: 0
+# polkadot_additional_common_flags:
+# polkadot_additional_validator_flags:
+loggingFilter: "sync=trace,afg=trace,babe=debug"
+chain: polkadot
+chain_stub: polkadot
+# base_path:
+# telemetryUrl:
