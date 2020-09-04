@@ -5,7 +5,7 @@ Description=Polkadot Node
 User=polkadot
 Group=polkadot
 ExecStart=/usr/local/bin/polkadot \
-  --name {{ project|default('project') }}-sv-validator-{{ count }} \
+  --name {{ project|default('project') }}-{{ instance_count }} \
   --validator \
   {% if polkadot_additional_common_flags is defined and polkadot_additional_common_flags|length %}
   {{ polkadot_additional_common_flags }} \
