@@ -14,6 +14,7 @@ Role Variables
 - chain: polkadot
 - chain_stub: polkadot
 - base_path:
+- default_telemetry_enabled: false
 - telemetryUrl:
 
 Dependencies

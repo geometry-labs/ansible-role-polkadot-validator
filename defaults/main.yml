@@ -9,3 +9,4 @@ chain: polkadot
 chain_stub: polkadot
 # base_path:
 # telemetryUrl:
+default_telemetry_enabled: false
