@@ -17,6 +17,7 @@ ExecStart=/usr/local/bin/polkadot \
   -l{{ loggingFilter }} \
   {% endif %}
   --chain={{ chain }} \
+  --database paritydb \
   {% if base_path is defined and base_path|length %}
   --base-path '{{ base_path }}' \
   {% endif %}
