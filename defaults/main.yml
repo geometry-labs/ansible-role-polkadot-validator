@@ -10,3 +10,6 @@ chain_stub: polkadot
 # base_path:
 # telemetryUrl:
 default_telemetry_enabled: false
+prometheus_port: 9610
+api_rpc_port: 9933
+api_wss_port: 9944

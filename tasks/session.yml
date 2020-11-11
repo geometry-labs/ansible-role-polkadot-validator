@@ -16,7 +16,7 @@
 
 - name: initialize server keys
   uri:
-    url: http://localhost:9933
+    url: "http://localhost:{{ api_rpc_port }}"
     method: "POST"
     body_format: json
     body: |
@@ -32,5 +32,5 @@
 - name: save rotateKeys output
   copy:
     content: "{{ rotate_keys.json }}"
-    dest: /home/polkadot/rotate_keys.log
+    dest: "/home/polkadot/rotate_keys_{{ chain }}.log"
   when: keystore_files.stdout == "0"
