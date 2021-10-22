@@ -17,7 +17,8 @@ ExecStart=/usr/local/bin/polkadot \
   -l{{ loggingFilter }} \
   {% endif %}
   --chain={{ chain }} \
-  --database paritydb-experimental \
+  --database rocksdb \
+  --wasm-execution=Compiled \
   --rpc-port {{ api_rpc_port }} \
   --ws-port {{ api_wss_port }} \
   --prometheus-port {{ prometheus_port }} \
