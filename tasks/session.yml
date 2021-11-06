@@ -23,6 +23,9 @@
       { "jsonrpc":"2.0", "method":"author_rotateKeys", "params":[], "id":1 }
   when: keystore_files.stdout == "0"
   register: rotate_keys
+  until: rotate_keys.status == 200
+  retries: 10
+  delay: 5
 
 - name: show rotateKeys output
   debug:
