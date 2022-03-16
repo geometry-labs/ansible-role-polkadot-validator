@@ -8,14 +8,13 @@
     mode: 0600
 
 - name: restart polkadot service
-  shell: |
-    set -o pipefail
-    systemctl stop {{ chain_stub }}.service || true
-    systemctl daemon-reload
-    systemctl enable --now {{ chain_stub }}.service
-  args:
-    executable: /bin/bash
-  changed_when: False
+  systemd:
+    name: "{{ chain_stub }}.service"
+    enabled: yes
+    state: restarted
+    daemon_reload: yes
+  changed_when: false
+  when: polkadot_service_running.stdout == "no"
 
 - name: polkadot session management
   include_tasks: session.yml
